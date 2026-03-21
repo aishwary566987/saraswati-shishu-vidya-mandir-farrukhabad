@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Glowing Gallery</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            width: 100%;
+            min-height: 100vh;
+            background-color: #050510; /* Deep space dark color */
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: hidden;
+        }
+
+        /* --- Animated Space Background --- */
+        .space-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            /* Dark gradient giving a deep space look */
+            background: radial-gradient(circle at 50% 50%, #1a0b2e 0%, #050510 100%);
+        }
+
+        /* Colorful Glowing Stars/Sparkles Layer */
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            /* Creating multiple colored dots using radial gradients */
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 40px 70px, #ffaa00, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 80px 160px, #00ffff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 150px 40px, #ff00ff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 200px 120px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 250px 80px, #00ffff, rgba(0,0,0,0));
+            background-repeat: repeat;
+            background-size: 300px 300px; /* Repeats the star pattern */
+            animation: twinkle 3s infinite alternate ease-in-out;
+        }
+
+        /* Twinkle Animation for the stars */
+        @keyframes twinkle {
+            0% { opacity: 0.3; transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1.1); }
+        }
+
+        /* --- Gallery Container --- */
+        .gallery-container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            display: grid;
+            /* Auto-magic grid! Adjusts columns based on screen size automatically */
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
+            align-items: center;
+        }
+
+        /* --- Image Styling --- */
+        .gallery-item {
+            width: 100%;
+            /* Yeh dono properties image ko hamesha perfect square rakhengi */
+            aspect-ratio: 1 / 1; 
+            object-fit: cover; 
+            
+            border-radius: 12px;
+            /* Cyber/Neon Glow Effects */
+            border: 2px solid rgba(0, 255, 255, 0.2); 
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.1), 0 0 30px rgba(138, 43, 226, 0.1);
+            background-color: #111; /* Agar image load na ho toh dark background dikhega */
+            
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        /* Hover Effect - Image thodi badi hogi aur zyada glow karegi */
+        .gallery-item:hover {
+            transform: translateY(-5px) scale(1.05);
+            border-color: rgba(0, 255, 255, 0.8);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.6), 0 0 40px rgba(138, 43, 226, 0.5);
+            z-index: 2;
+            position: relative;
+        }
+
+        /* Mobile Adjustments - Chhote screen par grid thodi chhoti ho jayegi */
+        @media (max-width: 600px) {
+            .gallery-container {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+                gap: 12px;
+                padding: 15px;
+                margin: 20px auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="space-background">
+        <div class="stars"></div>
+    </div>
+
+    <div class="gallery-container">
+        <img src="saraswatividyamandirimagea (1).jpeg" alt="Saraswati Shishu Vidya Mandir Farrukhabad" class="gallery-item" loading="lazy">
+        <img src="saraswatividyamandirimagea (2).jpeg" alt="Saraswati Shishu Vidya Mandir Farrukhabad" class="gallery-item" loading="lazy">
+        <img src="saraswatividyamandirimagea (3).jpeg" alt="Saraswati Shishu Vidya Mandir Farrukhabad" class="gallery-item" loading="lazy">
+        <img src="saraswatividyamandirimagea (4).jpeg" alt="Saraswati Shishu Vidya Mandir Farrukhabad" class="gallery-item" loading="lazy">
+        <img src="saraswatividyamandirimagea (5).jpeg" alt="Saraswati Shishu Vidya Mandir Farrukhabad" class="gallery-item" loading="lazy">
+        <img src="saraswatividyamandirimagea (6).jpeg" alt="Saraswati Shishu Vidya Mandir Farrukhabad" class="gallery-item" loading="lazy">
+        <img src="saraswatividyamandirimagea (7).jpeg" alt="Saraswati Shishu Vidya Mandir Farrukhabad" class="gallery-item" loading="lazy">
+        <img src="saraswatividyamandirimagea (8).jpeg" alt="Saraswati Shishu Vidya Mandir Farrukhabad" class="gallery-item" loading="lazy">
+        <img src="saraswatividyamandirimagea (9).jpeg" alt="Saraswati Shishu Vidya Mandir Farrukhabad" class="gallery-item" loading="lazy">
+        <img src="saraswatividyamandirimagea (10).jpeg" alt="Saraswati Shishu Vidya Mandir Farrukhabad" class="gallery-item" loading="lazy">
+        <img src="saraswatividyamandirimagea (11).jpeg" alt="Saraswati Shishu Vidya Mandir Farrukhabad" class="gallery-item" loading="lazy">
+        <img src="saraswatividyamandirimagea (12).jpeg" alt="Saraswati Shishu Vidya Mandir Farrukhabad" class="gallery-item" loading="lazy">
+        <img src="saraswatividyamandirimagea (13).jpeg" alt="Saraswati Shishu Vidya Mandir Farrukhabad" class="gallery-item" loading="lazy">
+        <img src="saraswatividyamandirimagea (14).jpeg" alt="Saraswati Shishu Vidya Mandir Farrukhabad" class="gallery-item" loading="lazy">
+        <img src="saraswatividyamandirimagea (15).jpeg" alt="Saraswati Shishu Vidya Mandir Farrukhabad" class="gallery-item" loading="lazy">
+        <img src="saraswatividyamandirimagea (16).jpeg" alt="Saraswati Shishu Vidya Mandir Farrukhabad" class="gallery-item" loading="lazy">
+        <img src="saraswatividyamandirimagea (17).jpeg" alt="Saraswati Shishu Vidya Mandir Farrukhabad" class="gallery-item" loading="lazy">
+        <img src="saraswatividyamandirimagea (18).jpeg" alt="Saraswati Shishu Vidya Mandir Farrukhabad" class="gallery-item" loading="lazy">
+        <img src="saraswatividyamandirimagea (19).jpeg" alt="Saraswati Shishu Vidya Mandir Farrukhabad" class="gallery-item" loading="lazy">
+        <img src="saraswatividyamandirimagea (20).jpg" alt="Saraswati Shishu Vidya Mandir Farrukhabad" class="gallery-item" loading="lazy">
+        <img src="saraswatividyamandirimagea (21).jpg" alt="Saraswati Shishu Vidya Mandir Farrukhabad" class="gallery-item" loading="lazy">
+        <img src="saraswatividyamandirimagea (22).jpg" alt="Saraswati Shishu Vidya Mandir Farrukhabad" class="gallery-item" loading="lazy">
+        <img src="saraswatividyamandirimagea (23).jpg" alt="Saraswati Shishu Vidya Mandir Farrukhabad" class="gallery-item" loading="lazy">
+        <img src="saraswatividyamandirimagea (24).jpg" alt="Saraswati Shishu Vidya Mandir Farrukhabad" class="gallery-item" loading="lazy">
+        <img src="saraswatividyamandirimagea (25).jpg" alt="Saraswati Shishu Vidya Mandir Farrukhabad" class="gallery-item" loading="lazy">
+        <img src="saraswatividyamandirimagea (27).jpg" alt="Saraswati Shishu Vidya Mandir Farrukhabad" class="gallery-item" loading="lazy">
+        <img src="saraswatividyamandirimagea (28).jpg" alt="Saraswati Shishu Vidya Mandir Farrukhabad" class="gallery-item" loading="lazy">
+        <img src="saraswatividyamandirimagea (29).jpg" alt="Saraswati Shishu Vidya Mandir Farrukhabad" class="gallery-item" loading="lazy">
+        <img src="saraswatividyamandirimagea (30).jpg" alt="Saraswati Shishu Vidya Mandir Farrukhabad" class="gallery-item" loading="lazy">
+        <img src="saraswatividyamandirimagea (31).jpg" alt="Saraswati Shishu Vidya Mandir Farrukhabad" class="gallery-item" loading="lazy">
+        <img src="saraswatividyamandirimagea (32).jpg" alt="Saraswati Shishu Vidya Mandir Farrukhabad" class="gallery-item" loading="lazy">
+        <img src="saraswatividyamandirimagea (1).jpg" alt="Saraswati Shishu Vidya Mandir Farrukhabad" class="gallery-item" loading="lazy">
+        <img src="saraswatividyamandirimagea (2).jpg" alt="Saraswati Shishu Vidya Mandir Farrukhabad" class="gallery-item" loading="lazy">
+        <img src="saraswatividyamandirimagea (3).jpg" alt="Saraswati Shishu Vidya Mandir Farrukhabad" class="gallery-item" loading="lazy">
+        <img src="saraswatividyamandirimagea (4).jpg" alt="Saraswati Shishu Vidya Mandir Farrukhabad" class="gallery-item" loading="lazy">
+        <img src="saraswatividyamandirimagea (5).jpg" alt="Saraswati Shishu Vidya Mandir Farrukhabad" class="gallery-item" loading="lazy">
+        <img src="saraswatividyamandirimagea (6).jpg" alt="Saraswati Shishu Vidya Mandir Farrukhabad" class="gallery-item" loading="lazy">
+        <img src="saraswatividyamandirimagea (7).jpg" alt="Saraswati Shishu Vidya Mandir Farrukhabad" class="gallery-item" loading="lazy">
+        <img src="saraswatividyamandirimagea (8).jpg" alt="Saraswati Shishu Vidya Mandir Farrukhabad" class="gallery-item" loading="lazy">
+        <img src="saraswatividyamandirimagea (9).jpg" alt="Saraswati Shishu Vidya Mandir Farrukhabad" class="gallery-item" loading="lazy">
+        <img src="saraswatividyamandirimagea (10).jpg" alt="Saraswati Shishu Vidya Mandir Farrukhabad" class="gallery-item" loading="lazy">
+        <img src="saraswatividyamandirimagea (11).jpg" alt="Saraswati Shishu Vidya Mandir Farrukhabad" class="gallery-item" loading="lazy">
+        <img src="saraswatividyamandirimagea (12).jpg" alt="Saraswati Shishu Vidya Mandir Farrukhabad" class="gallery-item" loading="lazy">
+        <img src="saraswatividyamandirimagea (13).jpg" alt="Saraswati Shishu Vidya Mandir Farrukhabad" class="gallery-item" loading="lazy">
+        <img src="saraswatividyamandirimagea (14).jpg" alt="Saraswati Shishu Vidya Mandir Farrukhabad" class="gallery-item" loading="lazy">
+        <img src="saraswatividyamandirimagea (15).jpg" alt="Saraswati Shishu Vidya Mandir Farrukhabad" class="gallery-item" loading="lazy">
+        <img src="saraswatividyamandirimagea (16).jpg" alt="Saraswati Shishu Vidya Mandir Farrukhabad" class="gallery-item" loading="lazy">
+        <img src="saraswatividyamandirimagea (17).jpg" alt="Saraswati Shishu Vidya Mandir Farrukhabad" class="gallery-item" loading="lazy">
+        <img src="saraswatividyamandirimagea (18).jpg" alt="Saraswati Shishu Vidya Mandir Farrukhabad" class="gallery-item" loading="lazy">
+        <img src="saraswatividyamandirimagea (19).jpg" alt="Saraswati Shishu Vidya Mandir Farrukhabad" class="gallery-item" loading="lazy">
+        <img src="saraswatividyamandirimagea (26).jpg" alt="Saraswati Shishu Vidya Mandir Farrukhabad" class="gallery-item" loading="lazy">
+        </div>
+
+</body>
+</html>
